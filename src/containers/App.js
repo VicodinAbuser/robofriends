@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import CardList from './Cardlist.js';
-import robots from './robots.js'
-import Searchbox from './Searchbox';
+import CardList from '../components/Cardlist.js';
+// import robots from './robots.js'
+import Searchbox from '../components/Searchbox';
 import './App.css';
+import Scroll from '../components/Scroll.js';
+import ErrorBoundary from '../components/ErrorBoundary.js';
 
 class App extends Component {
     constructor() {
@@ -23,7 +25,6 @@ class App extends Component {
                 robots: users
             })
         })
-        this.setState({robots: robots})
     }
 
     onSearchChange = (event) => {
@@ -42,7 +43,11 @@ class App extends Component {
             <div className='tc'>
             <h1 className='f1'>Robofriends</h1>
             <Searchbox searchChange={this.onSearchChange}/>
-            <CardList robots={filteredRobots}/>
+            <Scroll>
+                <ErrorBoundary>
+                    <CardList robots={filteredRobots}/>
+                </ErrorBoundary>
+            </Scroll>
             </div>
         )
     }
