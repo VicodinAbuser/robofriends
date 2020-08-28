@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CardList from '../components/Cardlist.js';
 import { connect } from 'react-redux';
 import Searchbox from '../components/Searchbox';
-import './App.css';
 import Scroll from '../components/Scroll.js';
 import ErrorBoundary from '../components/ErrorBoundary.js';
 import { setSearchField, requestRobots } from '../actions.js';
