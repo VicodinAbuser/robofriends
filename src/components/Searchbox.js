@@ -4,6 +4,7 @@ function Searchbox({ searchChange }) {
     return (
         <div>
         <input
+            ariaLabel='Enter Robots'
             className='pa3 ba b--green bg-lightest-blue'
             type='search'
             placeholder='search robots'
